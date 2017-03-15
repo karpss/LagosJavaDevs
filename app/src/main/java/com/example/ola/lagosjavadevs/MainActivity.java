@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback <Dev>() {
             @Override
             public void onResponse(Call<Dev> call, retrofit2.Response<Dev> response) {
-                //public void onResponse(Response<List<Student>> response, Retrofit retrofit) {
+
 
                 // Toast.makeText(MainActivity.this, "Status Code = " + response.code(), Toast.LENGTH_LONG).show();
 
