@@ -59,13 +59,15 @@ public class DevAdapter extends RecyclerView.Adapter<DevAdapter.MyViewHolder> {
         Picasso.with(mContext).load(itemComponents.get(position).getAvatar_url())
                 .into(myHolder.picture);
 
-        myHolder.devNames.setOnClickListener(new View.OnClickListener(){
+        myHolder.itemView.setOnClickListener(new View.OnClickListener(){
 
 
             @Override
             public void onClick(View v) {
-                Log.d(LOGCAT, "devNames onClick at" + position);
-                // etc
+                //Log.d(LOGCAT, "devNames onClick at" + position);
+
+                Toast.makeText(v.getContext(), "Clicked me",
+                        Toast.LENGTH_SHORT).show();
             }
 
         });
