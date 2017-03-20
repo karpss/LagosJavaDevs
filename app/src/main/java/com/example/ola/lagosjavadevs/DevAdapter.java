@@ -1,12 +1,15 @@
 package com.example.ola.lagosjavadevs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.List;
 
 import com.squareup.picasso.Picasso;
@@ -21,17 +24,25 @@ public class DevAdapter extends RecyclerView.Adapter<DevAdapter.MyViewHolder> {
     private Context mContext;
 
 
+
+
+
     public DevAdapter(Context context,  List<Dev.ItemComponents> itemComponents) {
         mContext = context;
         this.itemComponents = itemComponents;
     }
+
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_row_item, parent, false);
 
+
         return new MyViewHolder(itemView);
+
+
     }
 
     @Override
@@ -45,6 +56,8 @@ public class DevAdapter extends RecyclerView.Adapter<DevAdapter.MyViewHolder> {
 
         Picasso.with(mContext).load(itemComponents.get(position).getAvatar_url())
                 .into(myHolder.picture);
+
+
 
     }
 
