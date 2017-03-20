@@ -3,6 +3,7 @@ package com.example.ola.lagosjavadevs;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class DevAdapter extends RecyclerView.Adapter<DevAdapter.MyViewHolder> {
 
     private List<Dev.ItemComponents> itemComponents;
     private Context mContext;
+    private static final String LOGCAT = "DevAdapter";
 
 
 
@@ -46,7 +48,7 @@ public class DevAdapter extends RecyclerView.Adapter<DevAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(DevAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(DevAdapter.MyViewHolder holder, final int position) {
 
         final DevAdapter.MyViewHolder myHolder = holder;
 
@@ -56,6 +58,17 @@ public class DevAdapter extends RecyclerView.Adapter<DevAdapter.MyViewHolder> {
 
         Picasso.with(mContext).load(itemComponents.get(position).getAvatar_url())
                 .into(myHolder.picture);
+
+        myHolder.devNames.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View v) {
+                Log.d(LOGCAT, "devNames onClick at" + position);
+                // etc
+            }
+
+        });
 
 
 
