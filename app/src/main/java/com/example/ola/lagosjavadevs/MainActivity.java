@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
-    private DevAdapter dAdapter;
+    private DevAdapter dAdapt;
     List<Dev.ItemComponents> Devs;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -75,13 +75,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                    dAdapter = new DevAdapter(getApplicationContext(),Devs);
+                    dAdapt = new DevAdapter(getApplicationContext(),Devs);
 
 
                     mLayoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
-                    recyclerView.setAdapter(dAdapter);
+                    recyclerView.setAdapter(dAdapt);
                 }
             }
 
